@@ -18,6 +18,24 @@
             android:background="@color/colorPrimaryDark"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/MenuStyle"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            />
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="userName"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#ffff"
+            android:layout_marginLeft="25dp"
+            />
+
     </com.google.android.material.appbar.AppBarLayout>
 
 </LinearLayout>
