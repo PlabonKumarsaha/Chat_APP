@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -42,7 +43,17 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                
+                String txtUsername = username.getText().toString();
+                String txtmail = email.getText().toString();
+                String txtpassword = password.getText().toString();
+                if(TextUtils.isEmpty(txtUsername)||TextUtils.isEmpty(txtmail)||TextUtils.isEmpty(txtpassword))
+                {
+                    Toast.makeText(getApplicationContext(),"Add the requirement field",Toast.LENGTH_SHORT).show();
+                } else if(password.length()<6)
+                {
+                    Toast.makeText(getApplicationContext(),"Password length is too small",Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
     }
