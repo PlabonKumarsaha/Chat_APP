@@ -23,7 +23,9 @@ import java.util.HashMap;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    MaterialEditText username,email,password;
+    MaterialEditText username;
+    MaterialEditText email;
+    MaterialEditText password;
     Button btnRegister;
     private FirebaseAuth mAuth;
     DatabaseReference reference;
@@ -32,6 +34,8 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
+
 
         mAuth = FirebaseAuth.getInstance();
         username = findViewById(R.id.username);
@@ -54,12 +58,15 @@ public class RegistrationActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Password length is too small",Toast.LENGTH_SHORT).show();
 
                 }
+                else {
+                    regiser(txtUsername,txtmail,txtpassword);
+                }
             }
         });
     }
 
 
-    public void Regiser(final String username, String email, String password)
+    private void regiser(final String username, String email, String password)
     {
 
         mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
